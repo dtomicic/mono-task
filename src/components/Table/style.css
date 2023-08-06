@@ -1,0 +1,24 @@
+table.table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 85%;
+  }
+  table.table td, table.table th {
+    border: 1px solid #FFFFFF;
+    padding: 1px 0px;
+  }
+  table.table tbody td {
+    font-size: 16px;
+  }
+  table.table tr:nth-child(even) {
+    background: #D0E4F5;
+  }
+  table.table thead {
+    background: #0B6FA4;
+  }
+  table.table thead th {
+    font-size: 18px;
+    font-weight: 600;
+    color: #FFFFFF;
+    text-align: center;
+  }

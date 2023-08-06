@@ -3,3 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.main-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}

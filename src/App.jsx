@@ -1,16 +1,13 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
 import Navigation from "./components/Navigation/Navigation";
-import Table from "./components/Table/Table";
 
 function App() {
   return (
-    <>
+    <Router>
       <Navigation />
-      <div className="main-section">
-        <Table />
-      </div>
-    </>
+    </Router>
   );
 }
 

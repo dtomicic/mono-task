@@ -2,6 +2,7 @@ import React from "react";
 import { observer } from "mobx-react";
 import Table from "../../components/Table/Table";
 import modelStore from "../../stores/ModelStore";
+import Searchbox from "../../components/SearchBox/Searchbox";
 
 function Models() {
   React.useEffect(() => {
@@ -13,6 +14,7 @@ function Models() {
   }, []);
   return (
     <div>
+      <Searchbox />
       <Table data={modelStore.data} />
     </div>
   );

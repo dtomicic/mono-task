@@ -3,6 +3,7 @@ import { observer } from "mobx-react";
 import Table from "../../components/Table/Table";
 import makeStore from "../../stores/MakeStore";
 import Searchbox from "../../components/SearchBox/Searchbox";
+import AddButton from "../../components/AddButton/AddButton";
 
 function Home() {
   React.useEffect(() => {
@@ -15,6 +16,7 @@ function Home() {
   return (
     <div>
       <Searchbox />
+      <AddButton dataType="make" />
       <Table data={makeStore.data} />
     </div>
   );

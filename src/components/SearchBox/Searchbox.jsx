@@ -1,7 +1,6 @@
 import React from "react";
 import { observer } from "mobx-react";
 import searchStore from "../../stores/SearchStore";
-import "./style.css";
 
 function Searchbox() {
   const handleChange = (event) => {

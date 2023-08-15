@@ -1,0 +1,11 @@
+.success-message-box {
+    top: 20px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgb(70, 255, 64);
+    border-radius: 15px;
+    color: black;
+}

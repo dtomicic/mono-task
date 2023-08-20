@@ -1,5 +1,4 @@
 import React from "react";
-import tokenStore from "../../stores/TokenStore";
 import SuccessMessageBox from "../SuccessMessageBox/SuccessMessageBox";
 import ErrorMessageBox from "../ErrorMessageBox/ErrorMessageBox";
 import "./style.css";
@@ -24,7 +23,7 @@ function AddMakeForm() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `bearer ${tokenStore.token}`,
+          Authorization: `bearer ${localStorage.getItem("authToken")}`,
         },
         body: JSON.stringify(makeData),
       },

@@ -39,6 +39,7 @@ function AuthForm() {
     const responseData = await response.json();
     if (response.status === 200) {
       tokenStore.setToken(responseData.access_token);
+      localStorage.setItem("authToken", responseData.access_token);
       setUsername("");
       setPassword("");
       setError(false);
@@ -58,8 +59,7 @@ function AuthForm() {
     <div className="auth-form">
       {error && <ErrorMessageBox message="Username or password incorrect" />}
       {success && <SuccessMessageBox message="Authentication successful" />}
-      <h1 className="auth-header">Authentication</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-element">
         <input
           type="text"
           placeholder="Username"

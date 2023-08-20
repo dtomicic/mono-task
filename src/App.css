@@ -22,13 +22,6 @@ input:focus {
   box-shadow: 0 0 8px 0 #66afe9;
 }
 
-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  flex-direction: column;
-}
 
 button {
   width: 50%;

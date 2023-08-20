@@ -4,7 +4,7 @@ import { observer } from "mobx-react";
 import searchStore from "../../stores/SearchStore";
 import "./style.css";
 
-function Table({ data }) {
+function Table({ data, onDelete }) {
   const filteredData = data.filter((item) => {
     return (
       item.name.toLowerCase().includes(searchStore.searchTerm.toLowerCase()) ||
@@ -23,6 +23,18 @@ function Table({ data }) {
       {item.makeId && <td>{item.makeId}</td>}
       <td>{item.name}</td>
       <td>{item.abrv}</td>
+      <td>
+        <div
+          className="table-action"
+          onClick={() => onDelete(item.id)}
+          onKeyDown={() => onDelete(item.id)}
+          role="button"
+          tabIndex="0"
+        >
+          Delete
+        </div>
+        <div className="table-action">Edit</div>
+      </td>
     </tr>
   ));
 
@@ -34,6 +46,7 @@ function Table({ data }) {
           {data.length > 0 && data[0].makeId && <th>Make ID</th>}
           <th>Name</th>
           <th>Abrv</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>{mappedData}</tbody>
@@ -43,6 +56,7 @@ function Table({ data }) {
 
 Table.propTypes = {
   data: PropTypes.instanceOf(Array).isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default observer(Table);

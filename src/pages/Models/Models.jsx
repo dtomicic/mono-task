@@ -6,6 +6,8 @@ import Searchbox from "../../components/SearchBox/Searchbox";
 import AddButton from "../../components/AddButton/AddButton";
 import deleteModal from "../../stores/DeleteModalStore";
 import Modal from "../../components/Modal/Modal";
+import editModal from "../../stores/EditModalStore";
+import EditModelModal from "../../components/EditModelModal/EditModelModal";
 
 function Models() {
   const [itemId, setItemId] = React.useState("");
@@ -22,12 +24,23 @@ function Models() {
     deleteModal.setIsVisible(true);
     setItemId(id);
   };
+
+  const handleEdit = (id) => {
+    editModal.setIsVisible(true);
+    setItemId(id);
+  };
+
   return (
     <div>
       {deleteModal.isVisible && <Modal id={itemId} schema="VehicleModel" />}
+      {editModal.isVisible && <EditModelModal id={itemId} />}
       <Searchbox />
       <AddButton dataType="models" />
-      <Table data={modelStore.data} onDelete={handleDelete} />
+      <Table
+        data={modelStore.data}
+        onDelete={handleDelete}
+        onEdit={handleEdit}
+      />
     </div>
   );
 }

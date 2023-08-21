@@ -1,0 +1,17 @@
+.edit-modal-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.edit-modal-inputs {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.edit-modal-buttons {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}

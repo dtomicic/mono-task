@@ -32,3 +32,16 @@
 .table-action:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .table tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .table td,
+  .table th {
+    display: block;
+    flex: 1;
+  }
+}

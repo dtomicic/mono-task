@@ -14,6 +14,7 @@ function Modal({ id, schema }) {
         method: "DELETE",
         headers: {
           Authorization: `bearer ${localStorage.getItem("authToken")}`,
+          "Content-Type": "application/json",
         },
       },
     );
